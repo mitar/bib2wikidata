@@ -1,4 +1,4 @@
-csl2wikidata
+bib2wikidata
 ============
 Upload citation data to Wikidata
 
@@ -10,4 +10,4 @@ If you have a bibliography in CSL, you can use this tool to upload it to Wikidat
 By submitting, you agree to the terms of use (https://wikimediafoundation.org/wiki/Terms_of_Use),
 and you irrevocably agree to release your contribution under the Creative Commons CC0 License.
 
-For further information please contact mitar.csl2wikidata@tnode.com.
+For further information please contact mitar.bib2wikidata@tnode.com.
