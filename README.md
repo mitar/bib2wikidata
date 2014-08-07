@@ -3,7 +3,7 @@ bib2wikidata
 
 Upload bibliographic data to Wikidata.
 
-(Wikidata)[http://wikidata.org/] is a (Wikimedia](http://wikimedia.org/) project which stores
+[Wikidata](http://wikidata.org/) is a [Wikimedia](http://wikimedia.org/) project which stores
 huge amount of openly licensed ([CC0](https://creativecommons.org/publicdomain/zero/1.0/)) data.
 This tool is designed to help create an open bibliographic database.
 
