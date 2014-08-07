@@ -7,24 +7,42 @@
 
   <h1>Upload bibliographic data to Wikidata</h1>
 
-  <p><a href="http://wikidata.org/">Wikidata</a> is a <a href="http://wikimedia.org/">Wikimedia</a> project which stores huge amount
-of openly licensed (<a href="https://creativecommons.org/choose/zero/">CC0</a>) data. This tool is designed to help create an
-open bibliographic database.</p>
+  <p>
+    <a href="http://wikidata.org/">Wikidata</a> is a <a href="http://wikimedia.org/">Wikimedia</a> project which stores
+    huge amount of openly licensed (<a href="https://creativecommons.org/choose/zero/">CC0</a>) data. This tool is
+    designed to help create an open bibliographic database.
+  </p>
 
-  <p>If you have a bibliography in <a href="https://en.wikipedia.org/wiki/Citation_Style_Language">CSL</a> format, enter it into the box below and it will be uploaded to Wikidata.
-<!-- If it is not in CSL, convert it for free <a href="">here</a>. --></p>
+  <p>
+    If you have a bibliography in <a href="https://en.wikipedia.org/wiki/Citation_Style_Language">CSL</a> format, enter
+    it into the box below and it will be uploaded to Wikidata.{{! If it is not in CSL, convert it for free <a href="">here</a>. }}
+  </p>
 
-  {{> dataForm}}
+  <div class="main">
+    {{> importForm}}
+    {{> parsed}}
+    <div class="clear"></div>
+  </div>
 
-  <p>By clicking <i>Submit</i>, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">terms of use</a>, and you
-irrevocably agree to release your contribution under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 License</a>.</p>
+  <p>
+    By clicking <i>Submit</i>, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">terms of
+    use</a>, and you irrevocably agree to release your contribution under the
+    <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 License</a>.
+  </p>
 
   <p>For further information please contact <a href="mailto:mitar.bib2wikidata@tnode.com">Mitar</a>.</p>
 </body>
 
-<template name="dataForm">
+<template name="importForm">
   <form class="import">
+    <h2>Input</h2>
     <textarea rows="8" cols="80" class="data"></textarea>
-    <br /><button type="submit">Submit</button>
+    <button type="submit" class="submit">Submit</button>
   </form>
+</template>
+
+<template name="parsed">
+  <div class="parsed">
+    <h2>Parsed</h2>
+  </div>
 </template>

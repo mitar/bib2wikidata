@@ -1,0 +1,28 @@
+.main {
+  margin-bottom: 2em;
+}
+
+.import, .parsed {
+  width: 48%;
+}
+
+.import {
+  float: left;
+}
+
+.parsed {
+  float: right;
+}
+
+.import .submit, .import .data {
+  display: block;
+  margin: 0 auto;
+}
+
+.import .data {
+  width: 100%;
+}
+
+.clear {
+  clear: both;
+}
