@@ -1,16 +1,12 @@
-.main {
-  margin-bottom: 2em;
-}
-
-.import, .parsed {
+.import .input, .import .parsed {
   width: 48%;
 }
 
-.import {
+.import .input {
   float: left;
 }
 
-.parsed {
+.import .parsed {
   float: right;
 }
 
@@ -21,6 +17,15 @@
 
 .import .data {
   width: 100%;
+}
+
+.import {
+  margin-bottom: 2em;
+}
+
+.import .submit {
+  margin-top: 2em;
+  width: 30%;
 }
 
 .clear {
