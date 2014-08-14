@@ -6,3 +6,5 @@
 standard-app-packages
 coffeescript
 mediawiki
+accounts-ui
+accounts-mediawiki
