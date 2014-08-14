@@ -27,3 +27,11 @@ Run a local instance of bib2wikidata:
 
 Open [http://localhost:3000/](http://localhost:3000/), which is an address of
 your local instance.
+
+You will have to [register an OAuth consumer](https://www.mediawiki.org/wiki/Special:OAuthConsumerRegistration/propose). Ask for the following permissions:
+
+* Basic rights
+* High-volume editing
+* Edit existing pages
+* Edit protected pages
+* Create, edit, and move pages
