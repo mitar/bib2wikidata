@@ -1,5 +1,6 @@
 Package.describe({
-  summary: "MediaWiki OAuth flow"
+  summary: "MediaWiki OAuth flow",
+  version: '1.0.0'
 });
 
 Npm.depends({

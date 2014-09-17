@@ -2,13 +2,19 @@ var JWT = Npm.require('jwt-simple');
 
 MediaWikiOAuth = {};
 
-var BASE_URL = 'https://www.mediawiki.org/w';
+//var BASE_URL = 'https://www.mediawiki.org/w';
+var BASE_URL = 'http://127.0.0.1:8080';
+
+var authorize = function () {
+  // TODO: Add "fullscreen" to the query string if login style is popup
+  return BASE_URL + '/index.php?title=Special:OAuth/authorize';
+};
 
 var urls = {
   requestToken: BASE_URL + '/index.php?title=Special:OAuth/initiate',
-  authorize: BASE_URL + '/index.php?title=Special:OAuth/authorize&fullscreen',
+  authorize: authorize,
   accessToken: BASE_URL + '/index.php?title=Special:OAuth/token',
-  authenticate: BASE_URL + '/index.php?title=Special:OAuth/authorize&fullscreen' // TODO: MediaWiki does not support the authenticate flow, so we reuse authorize
+  authenticate: authorize // TODO: MediaWiki does not support the authenticate flow, so we reuse authorize
 };
 
 MediaWikiOAuth.whitelistedFields = ['confirmed_email', 'blocked', 'registered', 'groups', 'rights'];

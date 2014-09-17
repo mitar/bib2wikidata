@@ -24,14 +24,19 @@ MediaWikiOAuth.requestCredential = function (options, credentialRequestCompleteC
   // a credentialToken parameter to the url and the callback url that we'll be returned
   // to by oauth provider
 
+  var loginStyle = OAuth._loginStyle('mediawiki', config, options);
+
   // url to app, enters "step 1" as described in
   // packages/accounts-oauth1-helper/oauth1_server.js
-  var loginUrl = '/_oauth/mediawiki/?requestTokenAndRedirect=true'
-        + '&state=' + credentialToken;
+  var loginUrl = Meteor.absoluteUrl(
+    '_oauth/mediawiki/?requestTokenAndRedirect=true'
+      + '&state=' + OAuth._stateParam(loginStyle, credentialToken));
 
-  OAuth.showPopup(
-    loginUrl,
-    _.bind(credentialRequestCompleteCallback, null, credentialToken),
-    {height: 350}
-  );
+  OAuth.launchLogin({
+    loginService: 'mediawiki',
+    loginStyle: loginStyle,
+    loginUrl: loginUrl,
+    credentialRequestCompleteCallback: credentialRequestCompleteCallback,
+    credentialToken: credentialToken
+  });
 };
