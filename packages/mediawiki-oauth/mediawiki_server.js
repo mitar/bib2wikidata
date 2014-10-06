@@ -5,9 +5,14 @@ MediaWikiOAuth = {};
 //var BASE_URL = 'https://www.mediawiki.org/w';
 var BASE_URL = 'http://127.0.0.1:8080';
 
-var authorize = function () {
-  // TODO: Add "fullscreen" to the query string if login style is popup
-  return BASE_URL + '/index.php?title=Special:OAuth/authorize';
+var authorize = function (oauthBinding, options) {
+  if (options && options.query) {
+    var style = OAuth._loginStyleFromQuery(options.query);
+    if (style !== 'popup') {
+      return BASE_URL + '/index.php?title=Special:OAuth/authorize';
+    }
+  }
+  return BASE_URL + '/index.php?title=Special:OAuth/authorize&fullscreen';
 };
 
 var urls = {
