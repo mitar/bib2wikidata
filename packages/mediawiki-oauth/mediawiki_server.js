@@ -1,4 +1,5 @@
 var JWT = Npm.require('jwt-simple');
+var url = Npm.require('url');
 
 MediaWikiOAuth = {};
 
@@ -6,13 +7,16 @@ MediaWikiOAuth = {};
 var BASE_URL = 'http://127.0.0.1:8080';
 
 var authorize = function (oauthBinding, options) {
+  var redirectUrlObj = url.parse(BASE_URL + '/index.php?title=Special:OAuth/authorize', true);
+  redirectUrlObj.query.oauth_token = oauthBinding.requestToken;
+  redirectUrlObj.search = '';
   if (options && options.query) {
     var style = OAuth._loginStyleFromQuery(options.query);
-    if (style !== 'popup') {
-      return BASE_URL + '/index.php?title=Special:OAuth/authorize';
+    if (style === 'popup') {
+      redirectUrlObj.query.fullscreen = '';
     }
   }
-  return BASE_URL + '/index.php?title=Special:OAuth/authorize&fullscreen';
+  return url.format(redirectUrlObj);
 };
 
 var urls = {
